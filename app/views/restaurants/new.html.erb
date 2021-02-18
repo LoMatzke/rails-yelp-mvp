@@ -1,0 +1,22 @@
+
+<div class="container">
+<h1>Add a new restaurant:</h1>
+<br>
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <br>
+    <br>
+    <%= f.label :category %>
+    <%= f.select :category, options_for_select([['chinese'], ['italian'], ['japanese'], ['french'], ['belgian']]) %>
+    <br>
+    <br>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+  <br>
+  <%= link_to "Back to Overview", restaurants_path %>
+</div>
